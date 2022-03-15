@@ -4,14 +4,20 @@
 
 body {
   margin: 0;
-  background-color: #0B2434;
+  background-color: #292d3e;
   padding: 20px;
   font-family: 'Karla', sans-serif;
+}
+
+.darkBg {
+  background-color: black;
 }
 
 .main {
   background-color: #F5F5F5;
   height: 90vh;
+  min-height: 400px;
+  max-height: 800px;
   max-width: 800px;
   border-radius: 10px;
   padding: 20px;
@@ -19,46 +25,37 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  margin: auto;
+  position: relative;
 }
+
+.dark {
+  color: #F5F5F5;
+  background-color: #121212;
+}
+
+/* .header {
+  display: flex;
+  width: 100%;
+  margin-bottom: 0;
+} */
 
 .title {
   font-size: 2.5rem;
-  margin: 0;
+  text-align: center;
 }
 
 .instructions {
   font-weight: 400;
-  margin-top: 0;
   text-align: center;
   font-family: 'Inter', sans-serif;
+  margin-top: -1rem;
 }
 
-.dice-container {
-  display: grid;
-  grid-template: auto auto / repeat(5, 1fr);
-  gap: 30px;
-}
-
-.die-face {
-  height: 50px;
-  width: 50px;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #2B283A;
-  background-color: white;
-  cursor: pointer;
-}
-
-.die--num {
-  font-size: 2rem;
-}
 
 .btn-roll {
   color: white;
-  background-color: #5035FF;
+  background-color: #2B283A;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   font-family: 'Karla', sans-serif;
   border: none;
