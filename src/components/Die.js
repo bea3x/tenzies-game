@@ -7,7 +7,7 @@ export default function Die(props) {
     const faceType = props.isDot ? "face" : "die-face"
 
     const styles = {
-        backgroundColor: props.isHeld ? "#59E391" : "white" 
+        backgroundColor: props.isHeld ? "#64cd8f" : "white" 
     }
 
     
