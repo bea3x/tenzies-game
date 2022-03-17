@@ -21,7 +21,7 @@ export default function Mode(props) {
     ))
     const [isActive, setIsActive] = React.useState(false)
     function toggleBlur() {
-        console.log("true")
+        // console.log("true")
         setIsActive(prevState => !prevState)
     }
 

@@ -4,28 +4,11 @@ import Mode from "./components/Mode"
 import { nanoid } from "nanoid"
 
 import Confetti from "react-confetti"
-import { FiSettings } from "react-icons/fi"
-import { GrPowerReset } from "react-icons/gr"
 
 export default function App() {
 
   const [dotMode, setDotMode] = React.useState(true)
   const [darkMode, setDarkMode] = React.useState(false)
-  function handleDotToggle() {
-    setDotMode(prevMode => !prevMode)
-    setDice(prevDice => prevDice.map(die => {
-      return {...die, isDot: !die.isDot}
-    }))
-  }
-
-  function handleDarkToggle() {
-    setDarkMode(prevMode => !prevMode)
-  }
-
-  React.useEffect(function() {
-    document.body.style.backgroundColor = darkMode ?  "black" :  "#2a2333" 
-  }, [darkMode, dotMode])
-
   function allNewDice() {
     const diceArr = []
     for (let i=0; i < 10; i++) {
@@ -89,6 +72,7 @@ export default function App() {
   function resetBest() {
     setBest(0)
     localStorage.setItem("best", best)
+    // console.log("best: " + best)
   }
 
 
@@ -107,10 +91,24 @@ export default function App() {
       //save to local storage
       localStorage.setItem("best", best)      
       setTenzies(true)
-      console.log("You won!")
+      // console.log("You won!")
     }
   }, [best, dice, tenzies, moveCount])
-  
+
+  function handleDotToggle() {
+    setDotMode(prevMode => !prevMode)
+    setDice(prevDice => prevDice.map(die => {
+      return {...die, isDot: !die.isDot}
+    }))
+  }
+
+  function handleDarkToggle() {
+    setDarkMode(prevMode => !prevMode)
+  }
+
+  React.useEffect(function() {
+    document.body.style.backgroundColor = darkMode ?  "black" :  "#2a2333" 
+  }, [darkMode, dotMode])
 
   return( 
     <div className="container">
@@ -120,8 +118,6 @@ export default function App() {
         
         <h1 className="title">Tenzies</h1>
         <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
-          {/*TODO: replace below with reroll (dice symbol) */}
-          {/* <GrPowerReset className="icon" onClick={resetBest}/> */}
         <Mode
           handleReset={resetBest}
           handleDotToggle={handleDotToggle}

@@ -2,7 +2,7 @@ import "./Die.css"
 import { nanoid } from "nanoid"
 
 export default function Die(props) {
-    console.log(props)
+    // console.log(props)
 
     const faceType = props.isDot ? "face" : "die-face"
 
